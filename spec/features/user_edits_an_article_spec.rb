@@ -15,10 +15,11 @@ describe 'features' do
       fill_in "article[body]", with: body
 
       click_on "Update Article"
-      
+
       expect(current_path).to eq(article_path(article_1))
       expect(page).to have_content(title)
       expect(page).to have_content(body)
+      expect(page).to have_content("Article '#{title}' Updated!")
     end
   end
 end
