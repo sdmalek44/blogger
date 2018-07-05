@@ -8,11 +8,11 @@ describe 'Features' do
 
       visit article_path(article_1)
 
-      click_link("Delete")
+      click_link "Delete"
 
       expect(current_path).to eq(articles_path)
-      expect(page).to have_content(article_2.title, article_2.body)
-      expect(page).to_not have_content(article_1.title, article_1.body)
+      expect(page).to have_content(article_2.title)
+      expect(page).to_not have_content(article_1.title)
     end
   end
 end
