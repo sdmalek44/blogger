@@ -7,6 +7,7 @@
   <body>
     <h1><%= @article.title %></h1>
     <p><%= @article.body %></p>
+    <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
     <p><%= link_to "<< Back to Articles List", articles_path %></p>
     <p><%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"}%></p>
     <p><%= link_to "Edit", edit_article_path(@article) %></p>
