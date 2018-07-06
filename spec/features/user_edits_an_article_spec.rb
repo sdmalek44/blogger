@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe 'features' do
   context 'user visits article show' do
     it 'can edit an article' do
@@ -20,6 +22,16 @@ describe 'features' do
       expect(page).to have_content(title)
       expect(page).to have_content(body)
       expect(page).to have_content("Article '#{title}' Updated!")
+    end
+    it 'user can link to to tag show page' do
+      article = Article.create!(title: "New Title", body: "New Body")
+      tag = article.tags.create!(name: "Name")
+
+      visit article_path(article)
+
+      click_link tag.name
+
+      expect(current_path).to eq(tag_path(tag))
     end
   end
 end

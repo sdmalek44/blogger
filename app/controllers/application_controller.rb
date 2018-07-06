@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :set_article, only: [:show, :destroy, :edit, :update]
+  before_action :set_article, only: [:destroy, :edit, :update]
   protect_from_forgery with: :exception
 
   private
