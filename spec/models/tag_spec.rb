@@ -1,8 +1,6 @@
-describe Tag type: :model do
+describe Tag, type: :model do
   describe 'relationships' do
-    it 'has many articles' do
-      it {should_have_many(:taggings)}
-      it {should_have_many(:articles).through(:tagging)}
-    end
+    it {should have_many(:taggings)}
+    it {should have_many(:articles).through(:taggings)}
   end
 end
