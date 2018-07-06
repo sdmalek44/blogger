@@ -39,7 +39,7 @@ describe 'user sees one article' do
         fill_in "comment[body]", with: "some thoughts"
         click_on "Submit"
 
-        expect(current_path).to eq(articles_path)
+        expect(current_path).to eq(article_path(article))
         expect(page).to have_content("Post a Comment")
         expect(page).to have_content(author_name)
         expect(page).to have_content(body)
