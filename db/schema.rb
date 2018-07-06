@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20180705215142) do
     t.string "author_name"
     t.text "body"
     t.bigint "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
